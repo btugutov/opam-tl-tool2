@@ -1,0 +1,30 @@
+<div *ngIf='!user' class="main-div">
+    <h1 class="display-1 pam-tool-text">PAM Tool</h1>
+    <div class="form-row justify-content-center">
+        <a class="footer__btn-bp" (click)='login()'>
+                <span>Login</span>
+                <div class="footer__btn-bp-line">
+                    <div class="footer__btn-bp-line-inner"></div>
+                </div>
+            </a>
+    </div>
+</div>
+
+<div *ngIf='user'>
+    <div >
+        <nav class="navbar navbar-light" style="background-color: #4f91cd;">
+            <!-- Navbar content -->
+            <div class='navbar-content'>
+              <a class="navbar-brand" href="#!">PAM Tool</a>
+              <a class="navbar-brand" href="#!">New Review</a>
+              <a class="navbar-brand" href="#!">Ticket Dives</a>
+              <a class="navbar-brand" href="#!">History</a>
+              <a class="navbar-brand" href="#!">Power BI</a>
+            </div>
+          </nav>
+          
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+</div>
