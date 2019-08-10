@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
       name: 'Tester',
       email: 'Lol'
     }
+    this._c.checkConnection().then(res =>{
+      console.log("app.component checkConnection RES =>", res)
+    }).catch(function(error){
+      console.log("app.component  checkConnection err =>", error)
+    });
   }
   
 }

@@ -3,7 +3,7 @@ package controllers
 import javax.inject._
 import play.api._
 import play.api.mvc._
-
+import play.api.libs.json.Json
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
@@ -18,10 +18,22 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+  // def index() = Action { implicit request: Request[AnyContent] =>
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // jsdnfkjdsnfksdnkfnds jf dskj fsdf ;lsdkjf sdkjf sd
+  // // return res.json(object)
+  //   Ok(views.html.index())
+  // }
+  def appSummary = Action {
+    Ok(Json.obj("content" -> "Scala Play Angular Seed"))
   }
-  def index2() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index2())
+
+  def postTest = Action {
+    Ok(Json.obj("content" -> "Post Request Test => Data Sending Success"))
   }
 }
